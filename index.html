@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование для социального контракта</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <!-- Экран приветствия -->
+    <div id="welcome-screen" class="screen active">
+        <h1>Тестирование для социального контракта</h1>
+        <div class="welcome-content">
+            <p>Тест состоит из 45 вопросов с выбором одного правильного ответа из трёх вариантов.</p>
+            <p>Для успешного прохождения тестирования необходимо правильно ответить как минимум на 50% вопросов.</p>
+            <p>Время на прохождение теста не ограничено.</p>
+            <p>При каждом новом прохождении теста вопросы и варианты ответов будут разными!</p>
+        </div>
+        <div style="text-align: center;">
+            <button id="start-btn">Загрузка вопросов...</button>
+        </div>
+    </div>
+
+    <!-- Экран тестирования -->
+    <div id="test-screen" class="screen">
+        <h2>Вопросы теста</h2>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="progress-text">Вопрос <span id="current-question">1</span> из <span id="total-questions">45</span></div>
+
+        <div id="question-container">
+            <!-- Вопросы будут добавляться динамически -->
+        </div>
+
+        <div class="navigation">
+            <button id="prev-btn" disabled>← Назад</button>
+            <button id="next-btn">Далее →</button>
+            <button id="submit-btn" style="display: none;">Завершить тест</button>
+        </div>
+    </div>
+
+    <!-- Экран результатов -->
+    <div id="result-screen" class="screen">
+        <h1>Результаты тестирования</h1>
+        <div id="result-message" class="result"></div>
+        <div class="stats">
+            Правильных ответов: <span id="correct-answers">0</span> из <span id="total-answered">45</span>
+            (<span id="percentage">0</span>%)
+        </div>
+        <div id="review-container">
+            <!-- Результаты с разбором будут добавляться динамически -->
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <button id="restart-btn">⟳ Пройти тест заново</button>
+        </div>
+    </div>
+</div>
+
+<!-- Индикатор загрузки -->
+<div id="loading-indicator">
+    <div class="loading-spinner"></div>
+    <div style="font-size: 18px; margin-bottom: 10px;">Загрузка вопросов...</div>
+    <div style="font-size: 14px; color: #666;" id="loading-status">Подготовка</div>
+</div>
+
+<!-- Подключаем скрипты -->
+<script src="js/json-loader.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
